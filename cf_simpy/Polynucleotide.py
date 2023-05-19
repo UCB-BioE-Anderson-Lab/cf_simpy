@@ -1,15 +1,26 @@
 class Polynucleotide:
-    def __init__(self, sequence, ext5=None, ext3=None, isDoubleStranded=False, isCircular=False, mod_ext5=None, mod_ext3=None):
-        self.sequence = sequence.upper()
+
+    def __eq__(self, other):
+        if not isinstance(other, Polynucleotide):
+            return NotImplemented
+        return (self.sequence == other.sequence and
+                self.ext5 == other.ext5 and
+                self.ext3 == other.ext3 and
+                self.is_double_stranded == other.is_double_stranded and
+                self.is_circular == other.is_circular and
+                self.mod_ext5 == other.mod_ext5 and
+                self.mod_ext3 == other.mod_ext3)
+    def __init__(self, sequence, ext5, ext3, is_double_stranded, is_circular, mod_ext5, mod_ext3):
+        self.sequence = sequence.upper() if sequence else sequence
         self.ext5 = ext5.upper() if ext5 else ext5
         self.ext3 = ext3.upper() if ext3 else ext3
-        self.isDoubleStranded = isDoubleStranded
-        self.isCircular = isCircular
-        self.mod_ext5 = mod_ext5 or ''
-        self.mod_ext3 = mod_ext3 or ''
+        self.is_double_stranded = is_double_stranded
+        self.is_circular = is_circular
+        self.mod_ext5 = mod_ext5
+        self.mod_ext3 = mod_ext3
 
     def __str__(self):
-        return f'Polynucleotide(sequence={self.sequence}, ext5={self.ext5}, ext3={self.ext3}, isDoubleStranded={self.isDoubleStranded}, isCircular={self.isCircular}, mod_ext5={self.mod_ext5}, mod_ext3={self.mod_ext3})'
+        return f'Polynucleotide(sequence={self.sequence}, ext5={self.ext5}, ext3={self.ext3}, is_double_stranded={self.is_double_stranded}, is_circular={self.is_circular}, mod_ext5={self.mod_ext5}, mod_ext3={self.mod_ext3})'
 
     def __repr__(self):
         return self.__str__()

@@ -1,4 +1,4 @@
-from revcomp import revcomp
+from .revcomp import revcomp
 
 HOMOLOGY_LENGTH = 20
 

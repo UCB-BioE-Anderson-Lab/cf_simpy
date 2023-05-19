@@ -1,0 +1,6 @@
+description	input_seq	output_seq	should_throw_error
+A simple sequence	ATGGATCGTTTTTT	AAAAAACGATCCAT	FALSE
+Test of N degneracy codes	NNNNTTTTTAAAAA	TTTTTAAAAANNNN	FALSE
+Test of other degeneracy codes	RDKMRRTTTTTAAAAA	TTTTTAAAAAYYKMHY	FALSE
+Only bases and degeneracy codes allowed	XXX		TRUE
+"No spaces, numbers, nor punctuation allowed"	ATGGA TCGTTTTTT		TRUE

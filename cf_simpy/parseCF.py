@@ -1,4 +1,4 @@
-from constructionfile import ConstructionFile
+from .construction_file import ConstructionFile
 
 
 def parseCF(*blobs):

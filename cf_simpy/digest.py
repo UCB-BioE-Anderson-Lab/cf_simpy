@@ -1,5 +1,5 @@
-from Polynucleotide import Polynucleotide
-from assemble import restriction_enzymes
+from .polynucleotide import Polynucleotide
+from .assemble import restriction_enzymes
 
 
 def cut_once(poly, enz):
